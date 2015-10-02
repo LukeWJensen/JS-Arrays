@@ -113,7 +113,22 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-
+  function finder(numbers){
+    var needle = getRandomArbitrary();
+    var matches = [];
+    for(i = numbers.length; i >= 0; i--){
+      if(numbers[i] === needle){
+        matches.push(numbers[i]);
+      }
+    }
+    console.log(matches);
+    if(matches.length){
+        return true;
+    }else {
+        return false;
+    }
+  }
+  finder(numbers);
 
 //Next problem
 
@@ -123,7 +138,12 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes a given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-
+  function reverse(str){
+    var strArr = str.split('');
+    console.log(strArr);
+    return strArr.reverse().join('');
+  }
+  reverse(str);
 
 //Next Problem
 
@@ -143,19 +163,40 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
+  function removeItem(myGroceryList, itemToRemove){
+    for(i = myGroceryList.length; i >= 0; i--){
+      if(myGroceryList[i] === itemToRemove){
+        myGroceryList.splice(i, 1);
+      }      
+    }
+    return myGroceryList;
+  }
+  removeItem(myGroceryList, 'pizza');
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 
 
-
 //Next Problem
+function addItem(myGroceryList, itemToAdd){
+  myGroceryList.push(itemToAdd);
+  return myGroceryList;
+}
+addItem(myGroceryList, 'pringles');
 
 
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
+  function maker(){
+    var arr = [];
+    for (i = 1; i <= 215; i++){
+      arr.push(i);
+    }
+    return arr;
+  }
+  maker();
 
 
 
